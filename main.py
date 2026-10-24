@@ -17,7 +17,8 @@ CONFIG = {
     "terrains": {
         "woodlands": "./scene/woodlands.blend",
         "desert": "./scene/desert.blend",
-        # "urban": "./scene/urban.blend",
+        "snowland": "./scene/snowland.blend",
+        "urban": "./scene/urban.blend",
     },
     "times_of_day": ["day", "night"],
     "camera_elevations": {
@@ -147,6 +148,17 @@ def generate_tactical_palette(terrain: str, count: int = 4):
                         v = random.uniform(0.50, 0.60)
                     else:
                         v = random.uniform(0.60, 0.75)
+                case "snowland":  # Arctic / Snowland Icy Blues and Slate Greys
+                    h = random.uniform(0.50, 0.65)  # Cyan to light blue spectrum
+                    s = random.uniform(0.05, 0.25)  # Low saturation for snow/ice realism
+                    if i == 0:
+                        v = random.uniform(0.40, 0.55)  # Deep shadow / slate grey
+                    elif i == 1:
+                        v = random.uniform(0.55, 0.70)  # Mid shadow blue
+                    elif i == 2:
+                        v = random.uniform(0.70, 0.85)  # Bright ice tint
+                    else:
+                        v = random.uniform(0.85, 0.98)  # Pristine snow white
                 case _:  # Carbon / Dark Neutral Accents (urban)
                     h = random.uniform(0.0, 1.0)
                     s = random.uniform(0.0, 0.15)

@@ -10,3 +10,4 @@ wheels/
 .venv
 /outputs
 /scene/*.blend1
+/outputs.bak
